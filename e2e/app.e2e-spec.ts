@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('note-tes-options-front App', () => {
+describe('nwt-school-front App', () => {
   let page: AppPage;
 
   beforeEach(() => {
