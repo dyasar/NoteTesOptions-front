@@ -1,0 +1,56 @@
+<div class="container">
+<section class="row">
+  <article>
+    <header>
+      <h1>Angular 4</h1>
+    </header>
+    <div>
+      <h2>Description</h2>
+      <div class="col-sm-10">Ceci est la description de la matière...................................................</div>
+      <div class="col-sm-2">Bob Marley</div>
+      <div class="col-sm-6 col-md-4 col-lg-3">Note option : 4/5</div>
+      <div class="col-sm-6 col-md-4 col-lg-3">Note prof : 4/5</div>
+      <div class="col-sm-6 col-md-4 col-lg-3">Note compréhension : 3/5</div>
+      <div class="col-sm-6 col-md-4 col-lg-3">Note difficulté examen : 4/5</div>
+    </div>
+  </article>
+  <article>
+    <header>
+      <h2>Donnez votre avis</h2>
+    </header>
+    <div>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+        <div class="form-group">
+            <label for="comentaire">Votre commentaire</label>
+          <input type="text" class="form-control" id="comentaire" name="comentaire" [(ngModel)]="comentaire" required/>
+        </div>
+      </form>
+        <button mat-button color="primary" type="submit" (click)="add(f.value)">Valider</button>
+    </div>
+  </article>
+  <article>
+    <header>
+      <h2>Liste des commentaires et notes</h2>
+    </header>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Commentaire</th>
+          <th>Note totale attribuée</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr><td>Mon premier commentaire</td></tr>
+          <tr><td>Mon premier commentaire</td></tr>
+          <tr><td>Mon premier commentaire</td></tr>
+          <tr><td>Mon premier commentaire</td></tr>
+          <tr><td>Mon premier commentaire</td></tr>
+          <tr><td>Mon premier commentaire</td></tr>
+          <tr><td>Mon premier commentaire</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>
+</div>

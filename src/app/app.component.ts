@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'nwt-root',
+    selector: 'nto-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })

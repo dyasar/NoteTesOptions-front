@@ -1,5 +1,13 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.container {
+  background-color: rgba(255,255,255,0.7);
+}
+
+h1 {
+  border-bottom: 2px solid grey;
+}
+
 body {
   background: red;
   padding: 0;
@@ -7,6 +15,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: #FAFAFA;
   -webkit-font-smoothing: antialiased;
+  background-image: url(assets/images/plan-home.jpg);
+  background-size: 100%;
 }
 * /deep/ * {
   font-family: inherit;
