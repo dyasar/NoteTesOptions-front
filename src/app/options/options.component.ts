@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/defaultIfEmpty';
+import {OptionsService} from '../shared/options-service/options.service';
 
 @Component({
   selector: 'nto-options',
@@ -18,7 +19,7 @@ export class OptionsComponent implements OnInit {
      *
      * @param _optionsService
      */
-  constructor(private _optionsService) {
+  constructor (private _optionsService: OptionsService) {
         this._options = [];
   }
 

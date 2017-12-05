@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-
+/*import {ActivatedRoute} from '@angular/router';
+import { OptionsService } from '../shared/options-service/options.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/observable/mergeMap';
-import 'rxjs/add/observable/filter';
+import 'rxjs/add/observable/filter';*/
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'nto-option',
@@ -21,7 +21,7 @@ export class OptionComponent implements OnInit {
      *
      * @param _optionsService
      */
-    constructor(private _optionsService, private _router: ActivatedRoute) {
+    constructor(/*private _optionsService: OptionsService, private _route: ActivatedRoute*/) {
         this._option = {};
     }
 
@@ -38,13 +38,14 @@ export class OptionComponent implements OnInit {
      * Initialisation
      */
     ngOnInit() {
-        Observable
+    /*    Observable
             .merge(
-                this._router.params
+                this._route.params
                     .filter(params => !!params['id'])
                     .flatMap(params => this._optionsService.fetchOne(params['id']))
             )
-            .subscribe((option: any[]) => this._option = option);
-    }
+            .subscribe((opt: any) => this._option = opt);
+    */}
+
 
 }
