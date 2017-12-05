@@ -11,16 +11,14 @@ export class FormComponent implements OnInit, OnChanges {
     private _isUpdateMode: boolean;
     // private property to store model value
     private _model: any;
-    private _annuler$: EventEmitter<any>;
-    private _ajouter$: EventEmitter<any>;
+    private _submit$: EventEmitter<any>;
     private _form: FormGroup;
 
     /**
      * Component constructor
      */
     constructor() {
-        this._ajouter$ = new EventEmitter();
-        this._annuler$ = new EventEmitter();
+        this._submit$ = new EventEmitter();
         this._form = this._buildForm();
     }
 
@@ -62,23 +60,13 @@ export class FormComponent implements OnInit, OnChanges {
     }
 
     /**
-     * Returns private property _cancel$
+     * Returns private property _submit$
      *
      * @returns {EventEmitter<any>}
      */
-    @Output('annuler')
-    get annuler$(): EventEmitter<any> {
-        return this._annuler$;
-    }
-
-    /**
-     * Ajouter une option
-     *
-     * @returns {EventEmitter<any>}
-     */
-    @Output('ajouter')
-    get ajouter$(): EventEmitter<any> {
-        return this._ajouter$;
+    @Output('submit')
+    get submit$(): EventEmitter<any> {
+        return this._submit$;
     }
 
     /**
@@ -98,23 +86,16 @@ export class FormComponent implements OnInit, OnChanges {
             this._isUpdateMode = true;
             this._form.patchValue(this._model);
         } else {
-            this._model = {address: {}};
             this._isUpdateMode = false;
         }
     }
 
-    /**
-     * retour en arrière
-     */
-    annuler() {
-        this._annuler$.emit();
-    }
 
     /**
      * Envoie du formulaire
      */
-    ajouter(option: any) {
-        this._ajouter$.emit(option);
+    submit(option: any) {
+        this._submit$.emit(option);
     }
 
     /**

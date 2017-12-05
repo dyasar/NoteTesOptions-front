@@ -15,12 +15,3 @@ img {
 .mgb15{
     margin-bottom: 15px;
 }
-
-@media (min-width: 767px) {
-    section {
-        margin: auto;
-    }
-    article {
-        margin-top: 40px;
-    }
-}
