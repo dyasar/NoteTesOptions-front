@@ -12,14 +12,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import {OptionsService} from './shared/options-service/options.service';
 import { FormComponent } from './shared/form/form.component';
+import { NoteComponent } from './note/note.component';
+import {NoteService} from './shared/note-services/note.service';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent],
+  declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent, NoteComponent],
   imports: [
     BrowserModule, FormsModule, APP_ROUTES,
       HttpClientModule, HttpModule
   ],
-  providers: [OptionsService],
+  providers: [OptionsService, NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

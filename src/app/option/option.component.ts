@@ -14,22 +14,22 @@ import 'rxjs/add/operator/do';
     styleUrls: ['./option.component.css']
 })
 export class OptionComponent implements OnInit {
-    // private property to store person value
+    // private property to store option value
     private _option: any;
 
     /**
      * Component constructor
      */
-    constructor(private _peopleService: OptionsService, private _route: ActivatedRoute) {
+    constructor(private _optionService: OptionsService, private _route: ActivatedRoute) {
         this._option = {};
     }
 
     /**
-     * Returns private property _person
+     * Returns private property _option
      *
      * @returns {any}
      */
-    get person(): any {
+    get option(): any {
         return this._option;
     }
 
@@ -41,7 +41,7 @@ export class OptionComponent implements OnInit {
             .merge(
                 this._route.params
                     .filter(params => !!params['id'])
-                    .flatMap(params => this._peopleService.fetchOne(params['id']))
+                    .flatMap(params => this._optionService.fetchOne(params['id']))
                     .do(_ => this._option = true)
             )
             .subscribe((opt: any) => this._option = opt);

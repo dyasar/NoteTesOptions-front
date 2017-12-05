@@ -1,0 +1,33 @@
+<article>
+  <header>
+    <h2>Liste des commentaires et notes</h2>
+  </header>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Professeur</th>
+        <th>Interêt de l'option</th>
+        <th>Difficulté de compréhension</th>
+        <th>Difficulté de l'examen</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let note of _note">
+      <tr>
+        <td>
+          {{ note.note_prof }}
+        </td>
+        <td>
+          {{ note.note_option }}
+        </td>
+        <td>
+          {{ note.note_comprehension }}
+        </td>
+        <td>
+          {{ note.note_difficulte_examen }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</article>
