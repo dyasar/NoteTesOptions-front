@@ -14,10 +14,10 @@
           </tr>
           </thead>
           <tbody *ngFor="let option of options">
-          <tr onclick="document.location=''">
+          <tr>
             <td>
-              <a [routerLink]="['/option', option.id]">
-                {{ option.nom }}
+              <a [routerLink]="['/option/'+option.id]">
+              {{ option.nom }}
               </a>
             </td>
             <td>
