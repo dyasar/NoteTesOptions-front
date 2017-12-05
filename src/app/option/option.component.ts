@@ -46,4 +46,16 @@ export class OptionComponent implements OnInit {
             )
             .subscribe((opt: any) => this._option = opt);
     }
+
+    /**
+     * Function to delete one option
+     *
+     * @param option
+     */
+    delete(option: any) {
+        this._optionService
+            .delete(option.id)
+            .subscribe((opt: any[]) => this._option = opt);
+    }
+
 }

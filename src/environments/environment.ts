@@ -12,7 +12,8 @@ export const environment = {
         endpoints: {
             allOptions: '/api/options',
             oneOption: '/api/option/:id',
-            getNote: '/api/note/:option_id'
+            getNote: '/api/note/:option_id',
+            deleteOneOption: '/api/option/:id'
         }
     }
 };
