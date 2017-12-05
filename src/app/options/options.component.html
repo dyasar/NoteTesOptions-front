@@ -16,7 +16,9 @@
           <tbody *ngFor="let option of options">
           <tr>
             <td>
+              <a [routerLink]="['/option/'+option.id]">
               {{ option.nom }}
+              </a>
             </td>
             <td>
               {{ option.prof }}

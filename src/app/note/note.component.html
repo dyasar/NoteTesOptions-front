@@ -15,17 +15,20 @@
       <tbody *ngFor="let note of _note">
       <tr>
         <td>
-          {{ note.note_prof }}
+          {{ note.note_prof }}/5
         </td>
         <td>
-          {{ note.note_option }}
+          {{ note.note_option }}/5
         </td>
         <td>
-          {{ note.note_comprehension }}
+          {{ note.note_comprehension }}/5
         </td>
         <td>
-          {{ note.note_difficulte_examen }}
+          {{ note.note_difficulte_examen }}/5
         </td>
+      </tr>
+      <tr>
+        {{ note.commentaire }}
       </tr>
       </tbody>
     </table>
