@@ -123,7 +123,7 @@
     "component-selector": [
       true,
       "element",
-      "nwt",
+      "nto",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

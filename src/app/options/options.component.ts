@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+/*import {HttpClient} from "@angular/common/http";
 /*import {environment} from "../../environments/environment";*/
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/defaultIfEmpty";
@@ -20,7 +20,7 @@ export class OptionsComponent implements OnInit {
      * Constructeur
      * @param {HttpClient} _http
      */
-  constructor(private _http: HttpClient) {
+  constructor(/*private _http: HttpClient*/) {
         this._options = [];
         this._backendURL = {};
 
@@ -30,7 +30,7 @@ export class OptionsComponent implements OnInit {
             baseUrl += `:${environment.backend.port}`;
         }
 
-        // build all backend urls
+        // construction des url du backend
         Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
   */}
 
@@ -48,10 +48,10 @@ export class OptionsComponent implements OnInit {
      * Initialisation
      */
     ngOnInit() {
-        this._http.get(this._backendURL.allOptions)
+        /*this._http.get(this._backendURL.allOptions)
             .filter(_ => !!_)
             .defaultIfEmpty([])
             .subscribe((options: any[]) => this._options = options);
-    }
+    */}
 
 }
