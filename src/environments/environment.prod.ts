@@ -6,7 +6,8 @@ export const environment = {
         port: '4443',
         endpoints: {
             allOptions: '/api/options',
-            oneOption: '/api/option/:id'
+            oneOption: '/api/option/:id',
+            getNote: '/api/note/:option_id'
         }
     }
 };

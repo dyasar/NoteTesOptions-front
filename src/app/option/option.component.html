@@ -2,16 +2,16 @@
 <section class="row">
   <article>
     <header>
+<<<<<<< HEAD
       <h1>{{ option.nom }}</h1>
+=======
+      <h1>{{_option.nom}}</h1>
+>>>>>>> 6dd876fc0934973e8ff61967c6013ed7b0fe0295
     </header>
     <div>
       <h2>Description</h2>
-      <div class="col-sm-10">Ceci est la description de la matière...................................................</div>
-      <div class="col-sm-2">Bob Marley</div>
-      <div class="col-sm-6 col-md-4 col-lg-3">Note option : 4/5</div>
-      <div class="col-sm-6 col-md-4 col-lg-3">Note prof : 4/5</div>
-      <div class="col-sm-6 col-md-4 col-lg-3">Note compréhension : 3/5</div>
-      <div class="col-sm-6 col-md-4 col-lg-3">Note difficulté examen : 4/5</div>
+      <div class="col-sm-10">{{_option.description}}</div>
+      <div class="col-sm-2">{{_option.prof}}</div>
     </div>
   </article>
   <article>
@@ -28,29 +28,6 @@
         <button mat-button color="primary" type="submit" (click)="add(f.value)">Valider</button>-->
     </div>
   </article>
-  <article>
-    <header>
-      <h2>Liste des commentaires et notes</h2>
-    </header>
-    <div class="table-responsive">
-      <table class="table table-hover">
-        <thead>
-        <tr>
-          <th>Commentaire</th>
-          <th>Note totale attribuée</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr><td>Mon premier commentaire</td></tr>
-          <tr><td>Mon premier commentaire</td></tr>
-          <tr><td>Mon premier commentaire</td></tr>
-          <tr><td>Mon premier commentaire</td></tr>
-          <tr><td>Mon premier commentaire</td></tr>
-          <tr><td>Mon premier commentaire</td></tr>
-          <tr><td>Mon premier commentaire</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </article>
+  <nto-note></nto-note>
 </section>
 </div>

@@ -1,51 +1,49 @@
-/*import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { OptionsService } from '../shared/options-service/options.service';
-import {Observable} from 'rxjs/Observable';
+
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
-import 'rxjs/add/observable/mergeMap';
-import 'rxjs/add/observable/filter';*/
-import {Component, OnInit} from '@angular/core';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/do';
 
 @Component({
-  selector: 'nto-option',
-  templateUrl: './option.component.html',
-  styleUrls: ['./option.component.css']
+    selector: 'nto-option',
+    templateUrl: './option.component.html',
+    styleUrls: ['./option.component.css']
 })
 export class OptionComponent implements OnInit {
-
-    // une option
+    // private property to store option value
     private _option: any;
 
     /**
-     * Constructeur
-     *
-     * @param _optionsService
+     * Component constructor
      */
-    constructor(/*private _optionsService: OptionsService, private _route: ActivatedRoute*/) {
+    constructor(private _optionService: OptionsService, private _route: ActivatedRoute) {
         this._option = {};
     }
 
     /**
-     * Retourne une option
+     * Returns private property _option
      *
      * @returns {any}
      */
-    get option(): any[] {
+    get option(): any {
         return this._option;
     }
 
     /**
-     * Initialisation
+     * OnInit implementation
      */
     ngOnInit() {
-    /*    Observable
+        Observable
             .merge(
                 this._route.params
                     .filter(params => !!params['id'])
-                    .flatMap(params => this._optionsService.fetchOne(params['id']))
+                    .flatMap(params => this._optionService.fetchOne(params['id']))
+                    .do(_ => this._option = true)
             )
             .subscribe((opt: any) => this._option = opt);
-    */}
-
-
+    }
 }

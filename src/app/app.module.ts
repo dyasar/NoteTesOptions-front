@@ -14,14 +14,16 @@ import {OptionsService} from './shared/options-service/options.service';
 import { FormComponent } from './shared/form/form.component';
 import { EditerComponent } from './editer/editer.component';
 import { AjouterComponent } from './ajouter/ajouter.component';
+import { NoteComponent } from './shared/note/note.component';
+import {NoteService} from './shared/note-services/note.service';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent, EditerComponent, AjouterComponent],
+  declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent, EditerComponent, AjouterComponent, NoteComponent],
   imports: [
     BrowserModule, FormsModule, APP_ROUTES,
       HttpClientModule, HttpModule
   ],
-  providers: [OptionsService],
+  providers: [OptionsService, NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

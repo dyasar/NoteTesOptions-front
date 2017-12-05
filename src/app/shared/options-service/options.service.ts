@@ -36,7 +36,7 @@ export class OptionsService {
     }
 
     /**
-     * Retourne une personne en fonction de l'id
+     * Retourne une option en fonction de l'id
      *
      * @param id
      *
@@ -47,9 +47,9 @@ export class OptionsService {
     }
 
     /**
-     * Function to create a new person
+     * Function to create a new option
      *
-     * @param person
+     * @param option
      *
      * @returns {Observable<any>}
      */
@@ -58,9 +58,9 @@ export class OptionsService {
     }
 
     /**
-     * Function to update one person
+     * Function to update one option
      *
-     * @param person
+     * @param option
      *
      * @returns {Observable<any>}
      */
@@ -69,7 +69,7 @@ export class OptionsService {
     }
 
     /**
-     * Function to delete one person for current id
+     * Function to delete one option for current id
      *
      * @param id
      *
