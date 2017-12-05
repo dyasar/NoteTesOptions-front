@@ -11,19 +11,16 @@ export class FormComponent implements OnInit, OnChanges {
     private _isUpdateMode: boolean;
     // private property to store model value
     private _model: any;
-    // private property to store cancel$ value
-    private _cancel$: EventEmitter<any>;
-    // private property to store submit$ value
-    private _submit$: EventEmitter<any>;
-    // private property to store form value
+    private _annuler$: EventEmitter<any>;
+    private _ajouter$: EventEmitter<any>;
     private _form: FormGroup;
 
     /**
      * Component constructor
      */
     constructor() {
-        this._submit$ = new EventEmitter();
-        this._cancel$ = new EventEmitter();
+        this._ajouter$ = new EventEmitter();
+        this._annuler$ = new EventEmitter();
         this._form = this._buildForm();
     }
 
@@ -69,19 +66,19 @@ export class FormComponent implements OnInit, OnChanges {
      *
      * @returns {EventEmitter<any>}
      */
-    @Output('cancel')
-    get cancel$(): EventEmitter<any> {
-        return this._cancel$;
+    @Output('annuler')
+    get annuler$(): EventEmitter<any> {
+        return this._annuler$;
     }
 
     /**
-     * Returns private property _submit$
+     * Ajouter une option
      *
      * @returns {EventEmitter<any>}
      */
-    @Output('submit')
-    get submit$(): EventEmitter<any> {
-        return this._submit$;
+    @Output('ajouter')
+    get ajouter$(): EventEmitter<any> {
+        return this._ajouter$;
     }
 
     /**
@@ -107,21 +104,21 @@ export class FormComponent implements OnInit, OnChanges {
     }
 
     /**
-     * Function to emit event to cancel process
+     * retour en arrière
      */
-    cancel() {
-        this._cancel$.emit();
+    annuler() {
+        this._annuler$.emit();
     }
 
     /**
-     * Function to emit event to submit form and person
+     * Envoie du formulaire
      */
-    submit(person: any) {
-        this._submit$.emit(person);
+    ajouter(option: any) {
+        this._ajouter$.emit(option);
     }
 
     /**
-     * Function to build our form
+     * Construction du formulaire
      *
      * @returns {FormGroup}
      *

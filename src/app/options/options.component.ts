@@ -42,7 +42,4 @@ export class OptionsComponent implements OnInit {
             .subscribe((options: any[]) => this._options = options);
     }
 
-    showDialog() {
-    }
-
 }

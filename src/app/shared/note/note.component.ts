@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NoteService } from '../shared/note-services/note.service';
+import { NoteService } from '../note-services/note.service';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
