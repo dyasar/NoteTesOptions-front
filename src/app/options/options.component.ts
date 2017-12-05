@@ -41,5 +41,4 @@ export class OptionsComponent implements OnInit {
             .fetch()
             .subscribe((options: any[]) => this._options = options);
     }
-
 }

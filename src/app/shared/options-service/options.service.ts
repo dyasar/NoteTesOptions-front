@@ -76,7 +76,7 @@ export class OptionsService {
      * @returns {Observable<any[]>}
      */
     delete(id: string): Observable<any[]> {
-        return this._http.delete(this._backendURL.oneOption.replace(':id', id), this._options())
+        return this._http.delete(this._backendURL.deleteOneOption.replace(':id', id), this._options())
             .filter(_ => !!_)
             .defaultIfEmpty([]);
     }
