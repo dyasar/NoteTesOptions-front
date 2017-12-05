@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/home">NoteTesOptions</a>
+            <a class="navbar-brand" [routerLink]="['/home']">NoteTesOptions</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a [routerLink]="['/home']">Home</a></li>
+            <li><a [routerLink]="['/home']">Home</a></li>
             <li><a [routerLink]="['/options']">Toutes les options</a></li>
             <li><a [routerLink]="['/ajouter']">Ajout</a></li>
         </ul>
