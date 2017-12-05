@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-/*import {HttpClient} from "@angular/common/http";
-/*import {environment} from "../../environments/environment";*/
-import "rxjs/add/operator/filter";
-import "rxjs/add/operator/defaultIfEmpty";
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/defaultIfEmpty';
 
 @Component({
   selector: 'nto-options',
@@ -11,28 +10,17 @@ import "rxjs/add/operator/defaultIfEmpty";
 })
 export class OptionsComponent implements OnInit {
 
-  //liste des options
+  // liste des options
   private _options: any[];
-  //backendURL
-  private _backendURL: any;
 
     /**
      * Constructeur
-     * @param {HttpClient} _http
+     *
+     * @param _optionsService
      */
-  constructor(/*private _http: HttpClient*/) {
+  constructor(private _optionsService) {
         this._options = [];
-        this._backendURL = {};
-
-        // construction de l'url du backend
-        /**let baseUrl = `${environment.backend.protocol}://${environment.backend.host}`;
-        if (environment.backend.port) {
-            baseUrl += `:${environment.backend.port}`;
-        }
-
-        // construction des url du backend
-        Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
-  */}
+  }
 
     /**
      * Retourne la liste des options
@@ -48,10 +36,9 @@ export class OptionsComponent implements OnInit {
      * Initialisation
      */
     ngOnInit() {
-        /*this._http.get(this._backendURL.allOptions)
-            .filter(_ => !!_)
-            .defaultIfEmpty([])
+        this._optionsService
+            .fetch()
             .subscribe((options: any[]) => this._options = options);
-    */}
+    }
 
 }

@@ -8,7 +8,7 @@ import {OptionsComponent} from "./options/options.component";
 const ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'option', component: OptionComponent },
+  { path: 'option/:id', component: OptionComponent },
     { path: 'options', component: OptionsComponent }
 ];
 

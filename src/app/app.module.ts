@@ -8,13 +8,17 @@ import { OptionComponent } from './option/option.component';
 import {APP_ROUTES} from "./app.routes";
 import { OptionsComponent } from './options/options.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {HttpModule} from "@angular/http";
+import {OptionsService} from "./shared/options-service/options.service";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent],
   imports: [
-    BrowserModule, FormsModule, APP_ROUTES
+    BrowserModule, FormsModule, APP_ROUTES,
+      HttpClientModule, HttpModule
   ],
-  providers: [],
+  providers: [OptionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

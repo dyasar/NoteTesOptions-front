@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/mergeMap';
+import 'rxjs/add/observable/filter';
 
 @Component({
   selector: 'nto-option',
@@ -7,47 +13,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionComponent implements OnInit {
 
-    //liste des options
+    // une option
     private _option: any;
-    //backendURL
-    private _backendURL: any;
 
     /**
      * Constructeur
-     * @param {HttpClient} _http
+     *
+     * @param _optionsService
      */
-    constructor(/*private _http: HttpClient*/) {
+    constructor(private _optionsService, private _router: ActivatedRoute) {
         this._option = {};
-        this._backendURL = {};
-
-        // construction de l'url du backend
-        /**let baseUrl = `${environment.backend.protocol}://${environment.backend.host}`;
-         if (environment.backend.port) {
-            baseUrl += `:${environment.backend.port}`;
-        }
-
-         // construction des url du backend
-         Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
-         */}
+    }
 
     /**
-     * Retourne la liste des options
+     * Retourne une option
      *
      * @returns {any}
      */
-    get option(): any {
+    get option(): any[] {
         return this._option;
     }
-
 
     /**
      * Initialisation
      */
     ngOnInit() {
-        /*this._http.get(this._backendURL.allOptions)
-            .filter(_ => !!_)
-            .defaultIfEmpty([])
-            .subscribe((options: any[]) => this._option = options);
-    */}
+        Observable
+            .merge(
+                this._router.params
+                    .filter(params => !!params['id'])
+                    .flatMap(params => this._optionsService.fetchOne(params['id']))
+            )
+            .subscribe((option: any[]) => this._option = option);
+    }
 
 }
