@@ -12,9 +12,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import {OptionsService} from './shared/options-service/options.service';
 import { FormComponent } from './shared/form/form.component';
+import { EditerComponent } from './editer/editer.component';
+import { AjouterComponent } from './ajouter/ajouter.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent],
+  declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent, EditerComponent, AjouterComponent],
   imports: [
     BrowserModule, FormsModule, APP_ROUTES,
       HttpClientModule, HttpModule

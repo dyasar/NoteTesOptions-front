@@ -14,9 +14,11 @@
           </tr>
           </thead>
           <tbody *ngFor="let option of options">
-          <tr>
+          <tr onclick="document.location=''">
             <td>
-              {{ option.nom }}
+              <a [routerLink]="['/option', option.id]">
+                {{ option.nom }}
+              </a>
             </td>
             <td>
               {{ option.prof }}

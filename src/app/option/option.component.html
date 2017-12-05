@@ -2,7 +2,7 @@
 <section class="row">
   <article>
     <header>
-      <h1>Angular 4</h1>
+      <h1>{{ option.nom }}</h1>
     </header>
     <div>
       <h2>Description</h2>
@@ -19,13 +19,13 @@
       <h2>Donnez votre avis</h2>
     </header>
     <div>
-      <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <!--<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
         <div class="form-group">
             <label for="comentaire">Votre commentaire</label>
           <input type="text" class="form-control" id="comentaire" name="comentaire" [(ngModel)]="commentaire" required/>
         </div>
       </form>
-        <button mat-button color="primary" type="submit" (click)="add(f.value)">Valider</button>
+        <button mat-button color="primary" type="submit" (click)="add(f.value)">Valider</button>-->
     </div>
   </article>
   <article>
