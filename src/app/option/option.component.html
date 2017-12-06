@@ -19,12 +19,10 @@
   </article>
   <nto-note></nto-note>
 
-<<<<<<< HEAD
+
   <button type="button"  (click)="delete(_option)" a [routerLink]="['/home']" class="btn btn-danger btn-lg round">Ajouter</button>
   <button type="button" a [routerLink]="['/editer/'+option.id]" class="btn btn-primary btn-lg round">Modifier</button>
-=======
   <button type="button"  (click)="delete(_option)" [routerLink]="['/home']" class="btn btn-danger btn-lg round">Delete</button>
->>>>>>> 20be067b6983790fb67c8a641e3aefc099c02c9f
 </section>
 </div>
 <div *ngIf="!_option.nom">
