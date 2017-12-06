@@ -1,17 +1,17 @@
-
-<form novalidate  #f="ngForm">
+<form novalidate [formGroup]="form">
   <div class="form-group col-md-6">
     <label for="nom">Nom de l'option</label>
-    <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="model.nom" required/>
+    <input type="text" class="form-control" id="nom" name="nom" formControlName="nom" required/>
   </div>
   <div class="form-group col-md-6">
     <label for="prof">Professeur</label>
-    <input type="text" class="form-control" id="prof" name="prof" [(ngModel)]="model.prof" required/>
+    <input type="text" class="form-control" id="prof" name="prof" formControlName="prof" required/>
   </div>
   <div class="form-group p-15">
     <div class="form-group ">
     <label for="description">Description</label>
-    <textarea class="form-control" rows="5" id="description" name="description" [(ngModel)]="model.description" required></textarea>
-  </div> </div>
-  <button class="btn btn-primary pull-right" type="submit" (click)="submit(f.value)">Ajouter <span color="white" class="glyphicon glyphicon-ok"></span></button>
+    <textarea class="form-control" rows="5" id="description" name="description" formControlName="description" required></textarea>
+  </div>
+  <button class="btn btn-primary pull-right" type="submit" (click)="submit(form.value)">Ajouter <span color="white" class="glyphicon glyphicon-ok"></span></button>
+  </div>
 </form>
