@@ -10,7 +10,7 @@
           <tr>
             <th>Nom</th>
             <th>Professeur</th>
-            <th>Note totale attribuée</th>
+            <th>Description</th>
           </tr>
           </thead>
           <tbody *ngFor="let option of options">
@@ -24,7 +24,7 @@
               {{ option.prof }}
             </td>
             <td>
-              Note moyenne
+              {{ option.description }}
             </td>
           </tr>
           </tbody>
