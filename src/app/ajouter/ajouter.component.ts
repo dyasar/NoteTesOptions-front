@@ -16,7 +16,6 @@ export class AjouterComponent implements OnInit {
   }
 
     ajouter(option: any) {
-        console.log('test');
         this._optionsService
             .create(option)
             .subscribe() ,

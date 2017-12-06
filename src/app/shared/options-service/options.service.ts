@@ -54,7 +54,6 @@ export class OptionsService {
      * @returns {Observable<any>}
      */
     create(option): Observable<any> {
-        console.log(option);
         delete option.id;
         return this._http.post(this._backendURL.createOptions, option, this._options());
     }
@@ -67,7 +66,8 @@ export class OptionsService {
      * @returns {Observable<any>}
      */
     update(option: any): Observable<any> {
-        return this._http.put(this._backendURL.oneOption.replace(':id', option.id), option, this._options());
+        console.log(option);
+        return this._http.put(this._backendURL.updateOptions.replace(':id', option.id), option, this._options());
     }
 
     /**

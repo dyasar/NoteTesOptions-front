@@ -95,6 +95,7 @@ export class FormComponent implements OnInit, OnChanges {
      * Envoie du formulaire
      */
     submit(option: any) {
+        console.log(option);
         this._submit$.emit(option);
     }
 

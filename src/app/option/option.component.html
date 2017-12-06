@@ -26,7 +26,8 @@
   </article>
   <nto-note></nto-note>
 
-  <button type="button"  (click)="delete(_option)" a [routerLink]="['/home']" class="btn btn-danger btn-lg round">Delete</button>
+  <button type="button"  (click)="delete(_option)" a [routerLink]="['/home']" class="btn btn-danger btn-lg round">Ajouter</button>
+  <button type="button" a [routerLink]="['/editer/'+option.id]" class="btn btn-primary btn-lg round">Modifier</button>
 </section>
 </div>
 <div *ngIf="!_option.nom">
