@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="_option.nom" class="container">
 <section class="row">
   <article>
     <header>
@@ -25,6 +25,12 @@
     </div>
   </article>
   <nto-note></nto-note>
-  <button type="button" a [routerLink]="['/options']" (click)="delete(_option)" class="btn btn-danger btn-lg round">Delete</button>
+
+  <button type="button"  (click)="delete(_option)" a [routerLink]="['/home']" class="btn btn-danger btn-lg round">Delete</button>
 </section>
+</div>
+<div *ngIf="!_option.nom">
+  <header>
+    <h1>Id inexistant</h1>
+  </header>
 </div>
