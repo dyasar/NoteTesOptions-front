@@ -66,7 +66,8 @@ export class OptionsService {
      * @returns {Observable<any>}
      */
     update(option: any): Observable<any> {
-        return this._http.put(this._backendURL.oneOption.replace(':id', option.id), option, this._options());
+        console.log(option);
+        return this._http.put(this._backendURL.updateOptions.replace(':id', option.id), option, this._options());
     }
 
     /**

@@ -13,7 +13,7 @@ const ROUTES: Routes = [
   { path: 'option/:id', component: OptionComponent },
     { path: 'options', component: OptionsComponent },
     { path: 'ajouter', component: AjouterComponent },
-    { path: 'editer', component: EditerComponent }
+    { path: 'editer/:id', component: EditerComponent }
 ];
 
 export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: false });
