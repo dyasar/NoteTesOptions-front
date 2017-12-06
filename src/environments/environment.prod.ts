@@ -8,7 +8,8 @@ export const environment = {
             allOptions: '/api/options',
             oneOption: '/api/option/:id',
             getNote: '/api/note/:option_id',
-            deleteOneOption: '/api/option/:id'
+            deleteOneOption: '/api/option/:id',
+            create: '/api/option'
         }
     }
 };

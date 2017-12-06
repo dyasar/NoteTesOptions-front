@@ -16,7 +16,7 @@ export class AjouterComponent implements OnInit {
   }
 
   ajouter(option: any) {
-       this._optionsService
+      this._optionsService
            .create(option)
            .flatMap(_ => this._optionsService.fetch());
       this._router.navigate(['/option', option.id]);
