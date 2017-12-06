@@ -64,7 +64,7 @@ export class OptionComponent implements OnInit {
         this._notesService
             .create(note)
             .subscribe() ,
-            this._router.navigate(['/option', this._option.id]);
+            this._router.navigate(['/options']);
 
     }
 

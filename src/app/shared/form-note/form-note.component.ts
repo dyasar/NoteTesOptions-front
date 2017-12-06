@@ -59,15 +59,12 @@ export class FormNoteComponent implements OnInit {
      * @private
      */
     private _buildForm(): FormGroup {
-      console.log("test");
         return new FormGroup({
             id: new FormControl(''),
             option_id: new FormControl('', Validators.compose([
                 Validators.required, Validators.minLength(2)
             ])),
-            commentaire: new FormControl('', Validators.compose([
-                Validators.required, Validators.minLength(10)
-            ])),
+            commentaire: new FormControl(''),
             note_prof: new FormControl(''),
             note_option: new FormControl(''),
             note_comprehension: new FormControl(''),
