@@ -54,7 +54,6 @@ export class OptionsService {
      * @returns {Observable<any>}
      */
     create(option): Observable<any> {
-        console.log(option);
         delete option.id;
         return this._http.post(this._backendURL.createOptions, option, this._options());
     }

@@ -45,7 +45,8 @@ export class NoteService {
      * @returns {Observable<any>}
      */
     create(note): Observable<any> {
-        return this._http.post(this._backendURL.allOptions, note, this._note());
+        delete note.id;
+        return this._http.post(this._backendURL.createNote, note, this._note());
     }
 
 

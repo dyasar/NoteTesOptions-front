@@ -14,7 +14,8 @@ export const environment = {
             oneOption: '/api/option/:id',
             getNote: '/api/note/:option_id',
             deleteOneOption: '/api/option/:id',
-            createOptions: '/api/option'
+            createOptions: '/api/option',
+            createNote: '/api/note'
         }
     }
 };

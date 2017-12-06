@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { OptionsService } from '../shared/options-service/options.service';
 
 import { Observable } from 'rxjs/Observable';
@@ -7,6 +7,7 @@ import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/do';
+import {NoteService} from "../shared/note-services/note.service";
 
 @Component({
     selector: 'nto-option',
@@ -20,7 +21,7 @@ export class OptionComponent implements OnInit {
     /**
      * Component constructor
      */
-    constructor(private _optionService: OptionsService, private _route: ActivatedRoute) {
+    constructor(private _optionService: OptionsService, private _notesService: NoteService, private _route: ActivatedRoute, private _router: Router) {
         this._option = {};
     }
 
@@ -56,6 +57,15 @@ export class OptionComponent implements OnInit {
         this._optionService
             .delete(option.id)
             .subscribe((opt: any[]) => this._option = opt);
+    }
+
+    ajouter(note: any) {
+        note["option_id"] = this._option.id;
+        this._notesService
+            .create(note)
+            .subscribe() ,
+            this._router.navigate(['/option', this._option.id]);
+
     }
 
 }

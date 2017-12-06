@@ -14,15 +14,8 @@
     <header>
       <h2>Donnez votre avis</h2>
     </header>
-    <div>
-      <!--<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-        <div class="form-group">
-            <label for="comentaire">Votre commentaire</label>
-          <input type="text" class="form-control" id="comentaire" name="comentaire" [(ngModel)]="commentaire" required/>
-        </div>
-      </form>
-        <button mat-button color="primary" type="submit" (click)="add(f.value)">Valider</button>-->
-    </div>
+    <nto-form-note (submit)="ajouter($event)"  >
+    </nto-form-note>
   </article>
   <nto-note></nto-note>
 
