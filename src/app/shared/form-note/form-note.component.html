@@ -1,7 +1,10 @@
 <form novalidate [formGroup]="form">
   <div class="form-group">
     <label for="commentaire"></label>
-    <input type="text" class="form-control" placeholder="C'est une super option" id="commentaire" name="commentaire" formControlName="commentaire" />
+    <input type="text" class="form-control" placeholder="C'est une super option" id="commentaire" name="commentaire" formControlName="commentaire" required />
+    <div class="alert alert-danger" *ngIf="form.get('commentaire').dirty && form.get('commentaire').hasError('required')">
+      Le commentaire est <b>obligatoire</b>
+    </div>
   </div>
   <div class="form-group col-md-3 col-sm-6">
     <label for="prof">Professeur</label>
@@ -44,6 +47,6 @@
     </select>
   </div>
   <div>
-    <button class="btn btn-primary pull-right" type="submit" (click)="submit(form.value)">Ajouter <span color="white" class="glyphicon glyphicon-ok"></span></button>
+    <button class="btn btn-primary pull-right" type="submit" (click)="submit(form.value)" [disabled]="form.invalid">Ajouter <span color="white" class="glyphicon glyphicon-ok"></span></button>
   </div>
 </form>
