@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {OptionsService} from "../shared/options-service/options.service";
-import { Router} from "@angular/router";
+import {OptionsService} from '../shared/options-service/options.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'nto-ajouter',
@@ -15,11 +15,12 @@ export class AjouterComponent implements OnInit {
   ngOnInit() {
   }
 
-  ajouter(option: any) {
-       this._optionsService
-           .create(option)
-           .flatMap(_ => this._optionsService.fetch());
-      this._router.navigate(['/option', option.id]);
+    ajouter(option: any) {
+        console.log('test');
+        this._optionsService
+            .create(option)
+            .subscribe() ,
+        this._router.navigate(['/options']);
 
-   }
+}
 }
