@@ -16,9 +16,10 @@ import { EditerComponent } from './editer/editer.component';
 import { AjouterComponent } from './ajouter/ajouter.component';
 import { NoteComponent } from './shared/note/note.component';
 import {NoteService} from './shared/note-services/note.service';
+import { FormNoteComponent } from './shared/form-note/form-note.component';
 
 @NgModule({
-   declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent, EditerComponent, AjouterComponent, NoteComponent],
+   declarations: [AppComponent, HomeComponent, OptionComponent, OptionsComponent, FormComponent, EditerComponent, AjouterComponent, NoteComponent, FormNoteComponent],
   imports: [
     BrowserModule, FormsModule, APP_ROUTES,
       HttpClientModule, HttpModule, ReactiveFormsModule

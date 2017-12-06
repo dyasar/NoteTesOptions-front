@@ -10,7 +10,8 @@ export const environment = {
             getNote: '/api/note/:option_id',
             deleteOneOptions: '/api/option/:id',
             createOptions: '/api/option',
-            updateOptions: '/api/option/:id'
+            updateOptions: '/api/option/:id',
+            createNote: '/api/note'
         }
     }
 };

@@ -1,0 +1,49 @@
+<form novalidate [formGroup]="form">
+  <div class="form-group">
+    <label for="commentaire"></label>
+    <input type="text" class="form-control" placeholder="C'est une super option" id="commentaire" name="commentaire" formControlName="commentaire" required/>
+  </div>
+  <div class="form-group col-md-3 col-sm-4">
+    <label for="prof">Professeur</label>
+    <select class="form-control" id="prof" formControlName="note_prof">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group col-md-3 col-sm-4">
+    <label for="option">Option</label>
+    <select class="form-control" id="option" formControlName="note_option">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group col-md-3 col-sm-4">
+    <label for="comprehension">Compréhension</label>
+    <select class="form-control" id="comprehension" formControlName="note_comprehension">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group col-md-3 col-sm-4">
+    <label for="difficulte">Difficulté de l'examen</label>
+    <select class="form-control" id="difficulte" formControlName="note_difficulte_exam">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div>
+    <button class="btn btn-primary pull-right" type="submit" (click)="submit(form.value)">Ajouter <span color="white" class="glyphicon glyphicon-ok"></span></button>
+  </div>
+</form>

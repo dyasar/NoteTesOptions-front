@@ -6,32 +6,31 @@
     </header>
     <div>
       <h2>Description</h2>
-      <div class="col-sm-10">{{_option.description}}</div>
-      <div class="col-sm-2">{{_option.prof}}</div>
+      <div class="col-sm-9">{{_option.description}}</div>
+      <div class="col-sm-3"><b>Professeur :</b> {{_option.prof}}</div>
     </div>
   </article>
   <article>
     <header>
       <h2>Donnez votre avis</h2>
     </header>
-    <div>
-      <!--<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-        <div class="form-group">
-            <label for="comentaire">Votre commentaire</label>
-          <input type="text" class="form-control" id="comentaire" name="comentaire" [(ngModel)]="commentaire" required/>
-        </div>
-      </form>
-        <button mat-button color="primary" type="submit" (click)="add(f.value)">Valider</button>-->
-    </div>
+    <nto-form-note (submit)="ajouter($event)"  >
+    </nto-form-note>
   </article>
   <nto-note></nto-note>
 
+<<<<<<< HEAD
   <button type="button"  (click)="delete(_option)" a [routerLink]="['/home']" class="btn btn-danger btn-lg round">Ajouter</button>
   <button type="button" a [routerLink]="['/editer/'+option.id]" class="btn btn-primary btn-lg round">Modifier</button>
+=======
+  <button type="button"  (click)="delete(_option)" [routerLink]="['/home']" class="btn btn-danger btn-lg round">Delete</button>
+>>>>>>> 20be067b6983790fb67c8a641e3aefc099c02c9f
 </section>
 </div>
 <div *ngIf="!_option.nom">
+  <section class="row">
   <header>
     <h1>Id inexistant</h1>
   </header>
+  </section>
 </div>
