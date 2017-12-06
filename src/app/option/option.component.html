@@ -6,8 +6,8 @@
     </header>
     <div>
       <h2>Description</h2>
-      <div class="col-sm-10">{{_option.description}}</div>
-      <div class="col-sm-2">{{_option.prof}}</div>
+      <div class="col-sm-9">{{_option.description}}</div>
+      <div class="col-sm-3"><b>Professeur :</b> {{_option.prof}}</div>
     </div>
   </article>
   <article>
@@ -25,6 +25,6 @@
     </div>
   </article>
   <nto-note></nto-note>
-  <button type="button" a [routerLink]="['/options']" (click)="delete(_option)" class="btn btn-danger btn-lg round">Delete</button>
+  <button [routerLink]="['/options']" (click)="delete(_option)" class="btn btn-danger pull-right">Delete</button>
 </section>
 </div>
